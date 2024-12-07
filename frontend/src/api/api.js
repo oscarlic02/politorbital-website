@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:5000/api/v1';
+// Example structure of the API file. TODO: implement the api functions of the politorbital project.
+
+const API_BASE_URL = 'http://localhost:3001';
 
 export const fetchMissionsApi = async () => {
   const response = await fetch(`${API_BASE_URL}/missions`);

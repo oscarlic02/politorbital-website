@@ -1,9 +1,1 @@
-export const getStatusColor = (status) => {
-    const statusColors = {
-      Planned: 'blue',
-      'In Progress': 'yellow',
-      Completed: 'green',
-    };
-    return statusColors[status] || 'red';
-  };
-  
+/** Here function that are used more than once will be defined. */
