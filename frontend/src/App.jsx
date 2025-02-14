@@ -2,11 +2,13 @@ import React from 'react';
 import { ChakraProvider, Box, Container, Heading } from '@chakra-ui/react';
 import MissionsPage from './pages/MissionsPage';
 import GallerySection from "./components/GallerySection";
+import FooterSection from "./components/FooterSection";
 
 const App = () => {
   return (
     <ChakraProvider>
-      <GallerySection/>
+      <FooterSection/>
+      {/* <GallerySection/> */}
       {/* <Box minH="100vh" bg="gray.50">
         <Box borderBottom="1px" borderColor="gray.200" bg="white">
           <Container maxW="container.xl" py={4}>
