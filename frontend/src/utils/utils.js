@@ -1,1 +1,0 @@
-/** Here function that are used more than once will be defined. */
