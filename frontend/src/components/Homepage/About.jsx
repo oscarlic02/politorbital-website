@@ -4,9 +4,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { getColors } from '../../utils/utils';
 
 const GALLERY_IMAGES = [
-  "/homepage/gallery1.jpg",
-  "/homepage/gallery2.jpg",
-  "/homepage/gallery3.jpg"
+  "/assets/gallery1.jpg",
+  "/assets/gallery2.jpg",
+  "/assets/gallery3.jpg"
 ];
 
 /**
