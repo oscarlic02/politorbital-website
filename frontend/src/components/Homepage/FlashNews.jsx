@@ -1,26 +1,45 @@
-import { Flex, Text, Button } from '@chakra-ui/react';
-
+import { Flex, Text, Button, Divider } from '@chakra-ui/react';
+import { getColors } from '../../utils/utils.jsx';
+/**
+ * FlashNews component displays a recruitment message with a call-to-action button.
+ * @author Licciardi Oscar
+ * @component
+ * @example
+ * return (
+ *   <FlashNews />
+ * )
+ * 
+ * @returns {JSX.Element} The FlashNews component.
+ */
 const FlashNews = () => {
   return (
     <Flex
-      bg="gray.800"
+      bg={getColors().black}
       color="white"
+      direction="column"
       align="center"
-      justify="space-between"
-      px={8}
-      py={4}
+      justify="center"
+      py={6}
+      px={4}
+      textAlign="center"
     >
-      <Text fontSize="md" fontWeight="bold">
-        LOREM IPSUM LOREM!
+      <Divider borderColor="gray.500" width="80%" mb={12} border={'1px'} />
+      <Text fontSize="2xl" fontWeight="bold" fontFamily="Nasalization" >
+        WE ARE RECRUITING!
       </Text>
       <Button
         colorScheme="blue"
         variant="solid"
-        size="sm"
-        onClick={() => window.location.href = 'http://localhost:5000/api/v1/apply'}
+        fontFamily={'Space Grotesk'}
+        backgroundColor={getColors().applyButton}
+        rounded={'full'}
+        size="md"
+        mt={4}
+        onClick={() => window.location.href = '/api/v1/apply'}
       >
-        Lorem Ipsum
+        Apply now
       </Button>
+      <Divider borderColor="gray.500" width="80%" mt={10} border={'1px'}/>
     </Flex>
   );
 };

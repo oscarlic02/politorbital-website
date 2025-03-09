@@ -7,7 +7,6 @@ import cors from 'cors';
 dotenv.config();
 const app = express();
 app.use(cors());
-// middleware configuration for json bodies
 app.use(express.json());
 
 app.use("/api/v1/missions", missionRoutes);
