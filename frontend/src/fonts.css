@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Nasalization';
+    src: url('./fonts/Nasalization/Nasalization.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('./fonts/SpaceGrotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
