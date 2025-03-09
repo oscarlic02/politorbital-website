@@ -6,7 +6,7 @@ import './fonts.css';
 const App = () => {
   return (
     <ChakraProvider theme={theme}>
-        <MeetUs />
+        <HomePage />
     </ChakraProvider>
   );
 };
