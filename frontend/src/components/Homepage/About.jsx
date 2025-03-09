@@ -37,9 +37,8 @@ const GALLERY_IMAGES = [
  */
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const colors = getColors(); // Get theme colors
+  const colors = getColors();
   
-  // Responsive values
   const arrowSize = useBreakpointValue({ base: "sm", md: "md" });
   const arrowPosition = useBreakpointValue({ base: "8px", md: "16px" });
   const sectionSpacing = useBreakpointValue({ base: "8%", md: "5%" });

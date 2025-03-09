@@ -1,6 +1,18 @@
 import { Box, Flex, Text, VStack, Center } from "@chakra-ui/react";
 import PropTypes from 'prop-types';
 
+/**
+ * TimelineItem component renders a timeline item with a year, title, description, and a "LEARN MORE" link.
+ * It displays the item on the left or right side based on the `isLeft` prop and adds a connecting line if it's not the last item.
+ * @author Licciardi Oscar
+ * @param {Object} props - The properties object.
+ * @param {string} props.year - The year to display.
+ * @param {string} props.title - The title to display.
+ * @param {string} props.description - The description to display.
+ * @param {boolean} props.isLeft - Determines if the item should be aligned to the left.
+ * @param {boolean} props.isLast - Determines if the item is the last in the timeline.
+ * @returns {JSX.Element} The rendered TimelineItem component.
+ */
 const TimelineItem = ({ year, title, description, isLeft, isLast }) => (
   <Flex position="relative" w="full" justify="center" py={12}> 
     {!isLast && (
