@@ -17,7 +17,7 @@ const DiscoverIdeas = () => {
     <Box
       as="section"
       width="100%"
-      height="100vh"
+      height="80vh"
       bgGradient="linear(to-b, #001324, #000810)"
       position="relative"
       overflow="hidden"
@@ -44,8 +44,9 @@ const DiscoverIdeas = () => {
       >
         {/* Logo */}
         <Box mb={6}>
-            <img src="../../assets/logo.svg" alt="Rocket Icon" />
-        </Box>        
+            <img src="src/assets/homepage/politorbital.svg" alt="Rocket Icon" />
+        </Box>
+
         {/* Team Name */}
         <Text 
           fontSize="3xl" 

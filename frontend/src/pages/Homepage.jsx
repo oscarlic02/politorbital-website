@@ -11,8 +11,8 @@ const HomePage = () => {
       <Header />
       <DiscoverIdeas />
       <FlashNews />
-      <About />
       <Timeline />
+      <About />
       <Footer />
     </Box>
   );

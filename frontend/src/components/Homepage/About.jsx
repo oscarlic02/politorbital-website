@@ -4,11 +4,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { getColors } from '../../utils/utils';
 
 const GALLERY_IMAGES = [
-  "/assets/gallery1.jpg",
-  "/assets/gallery2.jpg",
-  "/assets/gallery3.jpg"
+  "src/assets/HomePage/gallery1.jpg",
+  "src/assets/HomePage/gallery2.jpg",
+  "src/assets/HomePage/gallery3.jpg",
 ];
-
 /**
  * About component renders the "About Us" section of the homepage.
  * It includes information about the team, a gallery of images, and sections for mission and vision.

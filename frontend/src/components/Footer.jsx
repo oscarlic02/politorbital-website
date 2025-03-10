@@ -18,7 +18,6 @@ const Footer = () => {
     <Box
       position="relative"
       width="100%"
-      maxW="1440px"
       height={footerHeight}
       bg="#13263C"
       overflow="hidden"
