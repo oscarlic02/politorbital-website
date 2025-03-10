@@ -37,9 +37,9 @@ export const getColors = () => ({
 export const SocialIcons = () => {
   const iconSize = useBreakpointValue({ base: '24px', md: '2vw' });
   const socialLinks = [
-    { href: "https://de.linkedin.com/company/politorbital", icon: "../icons/linkedin.svg", alt: "LinkedIn" },
-    { href: "https://www.instagram.com/politorbital_team/profilecard/?igsh=bnl4cTUyNGtlem85", icon: "../icons/instagram.svg", alt: "Instagram" },
-    { href: "https://www.tiktok.com", icon: "../icons/tiktok.svg", alt: "TikTok" },
+    { href: "https://de.linkedin.com/company/politorbital", icon: "src/assets/icons/linkedin.svg", alt: "LinkedIn" },
+    { href: "https://www.instagram.com/politorbital_team/profilecard/?igsh=bnl4cTUyNGtlem85", icon: "src/assets/icons/instagram.svg", alt: "Instagram" },
+    { href: "https://www.tiktok.com", icon: "src/assets/icons/tiktok.svg", alt: "TikTok" },
   ];
 
   return (

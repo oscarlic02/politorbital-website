@@ -35,12 +35,12 @@ import { getColors } from "../utils/utils";
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Meet us", href: "#" },
-    { name: "Projects", href: "#" },
-    { name: "Outreach", href: "#" },
-    { name: "Apply", href: "#" },
-    { name: "Work with us", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "Meet us", href: "/meet-us" },
+    { name: "Projects", href: "/projects" },
+    { name: "Outreach", href: "/outreach" },
+    { name: "Apply", href: "/apply" },
+    { name: "Work with us", href: "/work-with-us" },
   ];
 
   return (
