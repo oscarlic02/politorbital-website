@@ -9,6 +9,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WorkWithUs from "../pages/WorkWithUs";
 import StudentApply from "../pages/StudentApply";
+import Outreach from "../pages/Outreach";
+import Article from "./Outreach/Article";
 /**
  * @description AnimatedPage wrapper for page transitions
  * @author Licciardi Oscar
@@ -104,10 +106,21 @@ const AppRouter = () => {
           element={
             <AnimatedPage>
               {/* <Outreach /> */}
-              <Box>Outreach Page</Box>
+              <Outreach />
             </AnimatedPage>
           }
           onEnter={handleRouteChange}
+        />
+
+        <Route
+          path="/articles/:articleId"
+          element={
+            <AnimatedPage>
+              <Header />
+              <Article />
+              <Footer />
+            </AnimatedPage>
+          }
         />
 
         <Route
@@ -115,7 +128,7 @@ const AppRouter = () => {
           element={
             <AnimatedPage>
               {/* <Apply /> */}
-              <StudentApply/>
+              <StudentApply />
             </AnimatedPage>
           }
           onEnter={handleRouteChange}
