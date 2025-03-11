@@ -7,6 +7,8 @@ import PropTypes from "prop-types";
 import DivisionDetail from "./Meet-Us/DivisionDetail";
 import Header from "./Header";
 import Footer from "./Footer";
+import WorkWithUs from "../pages/WorkWithUs";
+import StudentApply from "../pages/StudentApply";
 /**
  * @description AnimatedPage wrapper for page transitions
  * @author Licciardi Oscar
@@ -81,7 +83,7 @@ const AppRouter = () => {
             <AnimatedPage>
               <Header />
               <DivisionDetail />
-              <Footer/>
+              <Footer />
             </AnimatedPage>
           }
         />
@@ -113,7 +115,7 @@ const AppRouter = () => {
           element={
             <AnimatedPage>
               {/* <Apply /> */}
-              <Box>Apply Page</Box>
+              <StudentApply/>
             </AnimatedPage>
           }
           onEnter={handleRouteChange}
@@ -123,8 +125,7 @@ const AppRouter = () => {
           path="/work-with-us"
           element={
             <AnimatedPage>
-              {/* <WorkWithUs /> */}
-              <Box>Work With Us Page</Box>
+              <WorkWithUs />
             </AnimatedPage>
           }
           onEnter={handleRouteChange}
