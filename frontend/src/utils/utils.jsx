@@ -218,6 +218,7 @@ export const ContactForm = () => {
       align="flex-start" 
       width="100%" 
       spacing="2vh"
+      id="contact-section"
     >
       <Text
         fontFamily="Nasalization"

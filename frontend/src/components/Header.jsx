@@ -83,14 +83,13 @@ import { getColors } from "../utils/utils";
 
       {/* Contact Button - Desktop */}
       <Button
-           colorScheme="blue"
-           variant="solid"
-           fontFamily={'Space Grotesk'}
-           backgroundColor={getColors().applyButton}
-           rounded={'full'}
-           size="md"
-           mt={4}
-           onClick={() => window.location.href = '/api/v1/apply'}
+        colorScheme="blue"
+        variant="solid"
+        fontFamily={"Space Grotesk"}
+        backgroundColor={getColors().applyButton}
+        rounded={"full"}
+        size="md"
+        mt={4}
       >
         Contact us
       </Button>
@@ -128,8 +127,7 @@ import { getColors } from "../utils/utils";
 
       {/* Mobile Drawer */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="full">
-      <DrawerContent bgGradient="linear(to-b, #001324, #000810)">
-
+        <DrawerContent bgGradient="linear(to-b, #001324, #000810)">
           <DrawerCloseButton color="white" size="lg" mt={2} />
           <DrawerBody>
             <VStack spacing={8} align="center" justify="center" h="full">
