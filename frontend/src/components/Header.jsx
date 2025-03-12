@@ -51,7 +51,8 @@ import { getColors } from "../utils/utils";
       w="full"
       px={{ base: 4, md: 6 }}
       py={4}
-      bgGradient={`linear(to-r, ${getColors.primary}, ${getColors.black})`}
+      bg="rgba(0, 0, 0, 0.5)" 
+      backdropFilter="blur(8px)"
       borderBottom="1px solid rgba(255,255,255,0.1)"
       position="fixed"
       top={0}
@@ -85,11 +86,9 @@ import { getColors } from "../utils/utils";
       <Button
         colorScheme="blue"
         variant="solid"
-        fontFamily={"Space Grotesk"}
         backgroundColor={getColors().applyButton}
         rounded={"full"}
         size="md"
-        mt={4}
       >
         Contact us
       </Button>

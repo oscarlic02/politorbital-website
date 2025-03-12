@@ -35,7 +35,7 @@ const FlashNews = () => {
         rounded={'full'}
         size="md"
         mt={4}
-        onClick={() => window.location.href = '/api/v1/apply'}
+        onClick={() => window.location.href = '/apply'}
       >
         Apply now
       </Button>

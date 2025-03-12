@@ -10,6 +10,7 @@ import {
   Container
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { m } from 'framer-motion';
 
 /**
  * TrustedByGallery component displays a gallery of logos in a carousel format.
@@ -31,34 +32,35 @@ const TrustedByGallery = () => {
     // First slide with 8 logos (4 per row)
     {
       topRow: [
-        { id: 1, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 1" },
-        { id: 2, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 2" },
-        { id: 3, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 3" },
-        { id: 4, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 4" }
+        { id: 1, src: "assets/WorkWithUs/logo.svg", alt: "Logo 1" },
+        { id: 2, src: "assets/WorkWithUs/logo.svg", alt: "Logo 2" },
+        { id: 3, src: "assets/WorkWithUs/logo.svg", alt: "Logo 3" },
+        { id: 4, src: "assets/WorkWithUs/logo.svg", alt: "Logo 4" }
       ],
       bottomRow: [
-        { id: 5, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 5" },
-        { id: 6, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 6" },
-        { id: 7, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 7" },
-        { id: 8, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 8" }
+        { id: 5, src: "assets/WorkWithUs/logo.svg", alt: "Logo 5" },
+        { id: 6, src: "assets/WorkWithUs/logo.svg", alt: "Logo 6" },
+        { id: 7, src: "assets/WorkWithUs/logo.svg", alt: "Logo 7" },
+        { id: 8, src: "assets/WorkWithUs/logo.svg", alt: "Logo 8" }
       ]
     },
     // Second slide with 8 more logos (4 per row)
     {
       topRow: [
-        { id: 9, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 9" },
-        { id: 10, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 10" },
-        { id: 11, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 11" },
-        { id: 12, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 12" }
+        { id: 9, src: "assets/WorkWithUs/logo.svg", alt: "Logo 9" },
+        { id: 10, src: "assets/WorkWithUs/logo.svg", alt: "Logo 10" },
+        { id: 11, src: "assets/WorkWithUs/logo.svg", alt: "Logo 11" },
+        { id: 12, src: "assets/WorkWithUs/logo.svg", alt: "Logo 12" }
       ],
       bottomRow: [
-        { id: 13, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 13" },
-        { id: 14, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 14" },
-        { id: 15, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 15" },
-        { id: 16, src: "src/assets/WorkWithUs/logo.svg", alt: "Logo 16" }
+        { id: 13, src: "assets/WorkWithUs/logo.svg", alt: "Logo 13" },
+        { id: 14, src: "assets/WorkWithUs/logo.svg", alt: "Logo 14" },
+        { id: 15, src: "assets/WorkWithUs/logo.svg", alt: "Logo 15" },
+        { id: 16, src: "assets/WorkWithUs/logo.svg", alt: "Logo 16" }
       ]
     }
   ];
+
   const totalSlides = logoSlides.length;
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);

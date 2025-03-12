@@ -23,7 +23,6 @@ const Introduction = () => {
       textAlign="left"
       color="white"
       maxW="80%"
-      mt={2}
       mx="auto"
     >
       <Text

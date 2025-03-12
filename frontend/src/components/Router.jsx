@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, Fade } from "@chakra-ui/react";
 import { getColors } from "../utils/utils";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Homepage";
 import MeetUs from "../pages/MeetUs";
 import PropTypes from "prop-types";
 import DivisionDetail from "./Meet-Us/DivisionDetail";
@@ -52,7 +52,6 @@ AnimatedPage.propTypes = {
  */
 const AppRouter = () => {
   const handleRouteChange = () => {
-    console.log("Route changed");
     window.scrollTo(0, 0);
   };
 

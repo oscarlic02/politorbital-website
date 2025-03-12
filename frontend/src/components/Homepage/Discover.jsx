@@ -44,7 +44,7 @@ const DiscoverIdeas = () => {
       >
         {/* Logo */}
         <Box mb={6}>
-            <img src="src/assets/homepage/politorbital.svg" alt="Rocket Icon" />
+            <img src="assets/HomePage/politorbital.svg" alt="Rocket Icon" />
         </Box>
 
         {/* Team Name */}
