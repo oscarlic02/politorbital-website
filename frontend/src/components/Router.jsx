@@ -11,6 +11,7 @@ import WorkWithUs from "../pages/WorkWithUs";
 import StudentApply from "../pages/StudentApply";
 import Outreach from "../pages/Outreach";
 import Article from "./Outreach/Article";
+import Project from "../pages/Projects";
 /**
  * @description AnimatedPage wrapper for page transitions
  * @author Licciardi Oscar
@@ -54,7 +55,6 @@ const AppRouter = () => {
   const handleRouteChange = () => {
     window.scrollTo(0, 0);
   };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -93,8 +93,7 @@ const AppRouter = () => {
           path="/projects"
           element={
             <AnimatedPage>
-              {/* <Projects /> */}
-              <Box>Projects Page</Box>
+              <Project/>
             </AnimatedPage>
           }
           onEnter={handleRouteChange}

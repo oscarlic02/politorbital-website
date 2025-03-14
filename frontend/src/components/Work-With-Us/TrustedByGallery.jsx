@@ -10,8 +10,6 @@ import {
   Container
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { m } from 'framer-motion';
-
 /**
  * TrustedByGallery component displays a gallery of logos in a carousel format.
  * Users can navigate through the slides using left and right arrows or by clicking on slide indicators.
