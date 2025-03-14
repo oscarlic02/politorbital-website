@@ -1,5 +1,4 @@
 import { Box, Text, Link } from "@chakra-ui/react";
-import { getColors } from "../../utils/utils";
 /**
  * Introduction component renders a section with information about recruitment for the PoliOrbital Team.
  * It includes a title, a brief description of available positions, links to open positions and FAQs,
@@ -12,18 +11,16 @@ import { getColors } from "../../utils/utils";
  * )*/
 
 const Introduction = () => {
-  const colors = getColors();
 
   return (
     <Box
-    bgGradient={`linear(to-b, ${colors.primary}, ${colors.black})`}
+    bgGradient={`black`}
     >
     <Box
       borderRadius="lg"
       textAlign="left"
       color="white"
       maxW="80%"
-      mt={2}
       mx="auto"
     >
       <Text

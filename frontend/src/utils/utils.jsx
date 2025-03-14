@@ -43,17 +43,17 @@ export const SocialIcons = () => {
   const socialLinks = [
     {
       href: "https://de.linkedin.com/company/politorbital",
-      icon: "src/assets/icons/linkedin.svg",
+      icon: "assets/icons/linkedin.svg",
       alt: "LinkedIn",
     },
     {
       href: "https://www.instagram.com/politorbital_team/profilecard/?igsh=bnl4cTUyNGtlem85",
-      icon: "src/assets/icons/instagram.svg",
+      icon: "assets/icons/instagram.svg",
       alt: "Instagram",
     },
     {
       href: "https://www.tiktok.com",
-      icon: "src/assets/icons/tiktok.svg",
+      icon: "assets/icons/tiktok.svg",
       alt: "TikTok",
     },
   ];

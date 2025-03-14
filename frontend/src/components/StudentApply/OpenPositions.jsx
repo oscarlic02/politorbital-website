@@ -267,6 +267,7 @@ const OpenPositions = () => {
       py={12}
       px={4}
       width="100%"
+      bg={`linear(to-b, ${colors.primary}, ${colors.black})`}
     >
       <Container maxW="1200px">
         <VStack align="flex-start" spacing={8} width="100%">

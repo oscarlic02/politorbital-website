@@ -153,7 +153,7 @@ const DivisionGeneral = () => {
 
   return (
     <Box
-      bgGradient={`linear(to-b, ${colors.primary}, ${colors.black})`}
+      bgGradient={'black'}
       position="relative"
       overflow="hidden"
       width="100%"

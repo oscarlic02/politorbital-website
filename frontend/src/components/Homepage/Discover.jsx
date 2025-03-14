@@ -1,4 +1,5 @@
 import { Box, Button, Text, Center } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * DiscoverIdeas component renders a section with a background gradient,
@@ -13,6 +14,8 @@ import { Box, Button, Text, Center } from "@chakra-ui/react";
  * @returns {JSX.Element} The DiscoverIdeas component.
  */
 const DiscoverIdeas = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       as="section"
@@ -44,7 +47,7 @@ const DiscoverIdeas = () => {
       >
         {/* Logo */}
         <Box mb={6}>
-            <img src="src/assets/homepage/politorbital.svg" alt="Rocket Icon" />
+            <img src="assets/HomePage/politorbital.svg" alt="Rocket Icon" />
         </Box>
 
         {/* Team Name */}
@@ -113,7 +116,8 @@ const DiscoverIdeas = () => {
             bgGradient: "linear(to-r, #051c30, #084373)",
             transition: "all 0.3s ease"
           }}
-        >
+          onClick={() => navigate("/projects")}
+          >
           Discover our space ideas
         </Button>
       </Center>

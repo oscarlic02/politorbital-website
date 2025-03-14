@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, Fade } from "@chakra-ui/react";
 import { getColors } from "../utils/utils";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Homepage";
 import MeetUs from "../pages/MeetUs";
 import PropTypes from "prop-types";
 import DivisionDetail from "./Meet-Us/DivisionDetail";
@@ -11,6 +11,7 @@ import WorkWithUs from "../pages/WorkWithUs";
 import StudentApply from "../pages/StudentApply";
 import Outreach from "../pages/Outreach";
 import Article from "./Outreach/Article";
+import Project from "../pages/Projects";
 /**
  * @description AnimatedPage wrapper for page transitions
  * @author Licciardi Oscar
@@ -52,10 +53,8 @@ AnimatedPage.propTypes = {
  */
 const AppRouter = () => {
   const handleRouteChange = () => {
-    console.log("Route changed");
     window.scrollTo(0, 0);
   };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -94,8 +93,7 @@ const AppRouter = () => {
           path="/projects"
           element={
             <AnimatedPage>
-              {/* <Projects /> */}
-              <Box>Projects Page</Box>
+              <Project/>
             </AnimatedPage>
           }
           onEnter={handleRouteChange}

@@ -1,35 +1,44 @@
-import { useState, useCallback } from 'react';
-import { Box, Flex, Text, Image, IconButton, Container, useBreakpointValue } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { getColors } from '../../utils/utils';
+import { useState, useCallback } from "react";
+import {
+  Box,
+  Flex,
+  Text,
+  Image,
+  IconButton,
+  Container,
+  useBreakpointValue,
+  Divider
+} from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { getColors } from "../../utils/utils";
 
 const GALLERY_IMAGES = [
-  "src/assets/HomePage/gallery1.jpg",
-  "src/assets/HomePage/gallery2.jpg",
-  "src/assets/HomePage/gallery3.jpg",
+  "assets/HomePage/gallery1.jpg",
+  "assets/HomePage/gallery2.jpg",
+  "assets/HomePage/gallery3.jpg",
 ];
 /**
  * About component renders the "About Us" section of the homepage.
  * It includes information about the team, a gallery of images, and sections for mission and vision.
- * @author Mohammadreza Hosseinifard 
+ * @author Mohammadreza Hosseinifard
  * @component
  * @example
  * return (
  *   <About />
  * )
- * 
+ *
  * @returns {JSX.Element} The rendered About component.
- * 
+ *
  * @description
  * The About component uses Chakra UI for styling and layout. It includes responsive design adjustments
- * using `useBreakpointValue` for various elements such as arrow size, arrow position, section spacing, 
+ * using `useBreakpointValue` for various elements such as arrow size, arrow position, section spacing,
  * and heading size. The component also includes a gallery with navigation arrows to cycle through images.
- * 
+ *
  * @hook
  * @function useState - Manages the current index of the gallery images.
  * @function useBreakpointValue - Provides responsive values for various elements.
  * @function useCallback - Memoizes the handlePrev and handleNext functions for gallery navigation.
- * 
+ *
  * @param {Object} props - The props object.
  * @param {Array} props.GALLERY_IMAGES - An array of image URLs for the gallery.
  * @param {Function} props.getColors - A function to get the theme colors.
@@ -37,18 +46,22 @@ const GALLERY_IMAGES = [
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const colors = getColors();
-  
+
   const arrowSize = useBreakpointValue({ base: "sm", md: "md" });
   const arrowPosition = useBreakpointValue({ base: "8px", md: "16px" });
   const sectionSpacing = useBreakpointValue({ base: "8%", md: "5%" });
   const headingSize = useBreakpointValue({ base: "24px", md: "30px" });
-  
+
   const handlePrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? GALLERY_IMAGES.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? GALLERY_IMAGES.length - 1 : prevIndex - 1
+    );
   }, []);
 
   const handleNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex === GALLERY_IMAGES.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === GALLERY_IMAGES.length - 1 ? 0 : prevIndex + 1
+    );
   }, []);
 
   return (
@@ -64,6 +77,8 @@ const About = () => {
       overflow="hidden"
     >
       {/* Background gradients */}
+      <Divider borderColor="gray.500" width="80%" mb={12} border={"1px"} />
+
       <Box
         position="absolute"
         width={{ base: "300px", md: "895px" }}
@@ -89,7 +104,6 @@ const About = () => {
 
       {/* Content Container */}
       <Container maxW={{ base: "95%", sm: "90%", md: "85%", lg: "80%" }} px="0">
-        
         {/* About Section */}
         <Flex
           direction={{ base: "column", md: "row" }}
@@ -100,22 +114,22 @@ const About = () => {
           position="relative"
           zIndex="1"
         >
-          <Flex 
-            direction="column" 
-            gap={{ base: "4", md: "10px" }} 
+          <Flex
+            direction="column"
+            gap={{ base: "4", md: "10px" }}
             flex="1"
             mb={{ base: "6", md: "0" }}
           >
-            <Text 
-              fontSize={{ base: "18px", sm: "20px", md: "27px" }} 
+            <Text
+              fontSize={{ base: "18px", sm: "20px", md: "27px" }}
               color="#FFFFFF"
               fontFamily="Nasalization"
             >
               ABOUT US
             </Text>
-            <Text 
-              fontSize={{ base: "24px", sm: headingSize, md: "30px" }} 
-              color="#FFFFFF" 
+            <Text
+              fontSize={{ base: "24px", sm: headingSize, md: "30px" }}
+              color="#FFFFFF"
               fontFamily="Nasalization"
               lineHeight={{ base: "1.2", md: "1.3" }}
             >
@@ -123,9 +137,9 @@ const About = () => {
               spacecrafts for <br />
               space tourism
             </Text>
-            <Text 
-              fontSize={{ base: "18px", sm: "20px", md: "27px" }} 
-              color="#FFFFFF" 
+            <Text
+              fontSize={{ base: "18px", sm: "20px", md: "27px" }}
+              color="#FFFFFF"
               fontFamily="Nasalization"
               mt={{ base: "2", md: "4" }}
             >
@@ -133,19 +147,18 @@ const About = () => {
             </Text>
           </Flex>
 
-          <Box 
-            flex="1" 
-            maxWidth={{ base: "100%", md: "600px" }} 
+          <Box
+            flex="1"
+            maxWidth={{ base: "100%", md: "600px" }}
             fontSize={{ base: "16px", md: "18px" }}
-            color="#FFFFFF" 
+            color="#FFFFFF"
             mt={{ base: "0", md: "4" }}
           >
-            Politorbital team is an university team from Politecnico 
-            di Torino born in 2020 for designing suborbital 
-            spacecrafts for space tourism.
+            Politorbital team is an university team from Politecnico di Torino
+            born in 2020 for designing suborbital spacecrafts for space tourism.
             <Box height="20px" />
-            The team is composed by more than 50 students, all 
-            united by the passion for space.
+            The team is composed by more than 50 students, all united by the
+            passion for space.
           </Box>
         </Flex>
 
@@ -211,53 +224,47 @@ const About = () => {
         </Box>
 
         {/* Mission Vision Section */}
-        <Flex 
-          direction={{ base: "column", md: "row" }} 
-          justify="space-between" 
-          mt={{ base: "8%", md: "5%" }} 
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          justify="space-between"
+          mt={{ base: "8%", md: "5%" }}
           gap={{ base: "8", md: "40px" }}
         >
           <Box flex="1" mb={{ base: "6", md: "0" }}>
-            <Text 
-              fontSize={{ base: "18px", md: "20px" }} 
-              color="#FFFFFF" 
+            <Text
+              fontSize={{ base: "18px", md: "20px" }}
+              color="#FFFFFF"
               fontFamily="Nasalization"
               mb="2"
             >
               OUR MISSION
             </Text>
-            <Text 
-              fontSize={{ base: "16px", md: "18px" }} 
-              color="#FFFFFF"
-            >
+            <Text fontSize={{ base: "16px", md: "18px" }} color="#FFFFFF">
               The mission of the team is about
             </Text>
           </Box>
 
           <Box flex="1">
-            <Text 
-              fontSize={{ base: "18px", md: "20px" }} 
-              color="#FFFFFF" 
+            <Text
+              fontSize={{ base: "18px", md: "20px" }}
+              color="#FFFFFF"
               fontFamily="Nasalization"
               mb="2"
             >
               OUR VISION
             </Text>
-            <Text 
-              fontSize={{ base: "16px", md: "18px" }} 
-              color="#FFFFFF"
-            >
+            <Text fontSize={{ base: "16px", md: "18px" }} color="#FFFFFF">
               The vision of the team is about
             </Text>
           </Box>
         </Flex>
 
         {/* Separator Line */}
-        <Box 
-          width="100%" 
-          height="1px" 
-          backgroundColor="white" 
-          mt={{ base: "10%", md: "5%" }} 
+        <Box
+          width="100%"
+          height="1px"
+          backgroundColor="white"
+          mt={{ base: "10%", md: "5%" }}
           opacity="0.7"
         />
       </Container>
