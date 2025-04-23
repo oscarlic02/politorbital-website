@@ -9,8 +9,3 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
-
-
-/* credenziali mongo db */
-// user: oscarlicciardi
-// pw: pNVl8OjFi9HxoeZ0
