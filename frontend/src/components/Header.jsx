@@ -4,7 +4,7 @@ import {
   Box,
   HStack,
   Button,
-  Link,
+  Link as ChakraLink,
   IconButton,
   VStack,
   Drawer,
@@ -14,7 +14,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { getColors } from "../utils/utils";
-
+import { Link as RouterLink, useLocation } from "react-router-dom"; 
 /**
  * Header component that displays a navigation bar with links and a contact button.
  *
@@ -31,9 +31,10 @@ import { getColors } from "../utils/utils";
  * )
  *
  * @returns {JSX.Element} The rendered header component.
- */ const Header = () => {
+ */ 
+const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const location = useLocation(); 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Meet us", href: "/meet-us" },
@@ -42,6 +43,14 @@ import { getColors } from "../utils/utils";
     { name: "Apply", href: "/apply" },
     { name: "Work with us", href: "/work-with-us" },
   ];
+
+  // yellow color on active tab
+  const isActive = (path) => {
+    if (path === "/" && location.pathname === "/") {
+      return true;
+    }
+    return path !== "/" && location.pathname.startsWith(path);
+  };
 
   return (
     <Flex
@@ -68,26 +77,27 @@ import { getColors } from "../utils/utils";
       {/* Desktop Navigation Links */}
       <HStack spacing={8} display={{ base: "none", md: "flex" }}>
         {navItems.map((item) => (
-          <Link
+          <ChakraLink
             key={item.name}
-            href={item.href}
-            color="white"
+            as={RouterLink}
+            to={item.href}
+            color={isActive(item.href) ? "yellow.400" : "white"}
             fontSize="sm"
             fontWeight="medium"
-            _hover={{ color: "rgba(255,255,255,0.8)" }}
-            textDecoration="none"
-          >
+            _hover={{ color: isActive(item.href) ? "yellow.300" : "rgba(255,255,255,0.8)" }}          >
             {item.name}
-          </Link>
+          </ChakraLink>
         ))}
       </HStack>
 
       {/* Contact Button - Desktop */}
       <Button
+        as={RouterLink}
+        to="/contact"
         colorScheme="blue"
         variant="solid"
         backgroundColor={getColors().applyButton}
-        rounded={"full"}
+        rounded="full"
         size="md"
       >
         Contact us
@@ -131,22 +141,27 @@ import { getColors } from "../utils/utils";
           <DrawerBody>
             <VStack spacing={8} align="center" justify="center" h="full">
               {navItems.map((item) => (
-                <Link
+                <ChakraLink
                   key={item.name}
-                  href={item.href}
-                  color="white"
+                  as={RouterLink}
+                  to={item.href}
+                  color={isActive(item.href) ? "yellow.400" : "white"}
                   fontSize="xl"
                   fontWeight="medium"
-                  _hover={{ color: "rgba(255,255,255,0.8)" }}
-                  textDecoration="none"
+                  _hover={{ color: isActive(item.href) ? "yellow.300" : "rgba(255,255,255,0.8)" }}
+                  textDecoration={isActive(item.href) ? "underline" : "none"}
+                  textUnderlineOffset="4px"
+                  textDecorationThickness="2px"
                   onClick={onClose}
                 >
                   {item.name}
-                </Link>
+                </ChakraLink>
               ))}
 
               {/* Contact Button - Mobile */}
               <Button
+                as={RouterLink}
+                to="/contact"
                 borderRadius="full"
                 px={8}
                 py={6}
@@ -169,7 +184,7 @@ import { getColors } from "../utils/utils";
                   left: 0,
                   zIndex: -1,
                   borderRadius: "full",
-                  bgGradient: `linear(to-r, ${getColors.primary}, ${getColors.secondary})`,
+                  bgGradient: `linear(to-r, ${getColors().primary}, ${getColors().secondary})`,
                 }}
                 _after={{
                   content: '""',
@@ -180,7 +195,7 @@ import { getColors } from "../utils/utils";
                   left: "1px",
                   zIndex: -1,
                   borderRadius: "full",
-                  bgGradient: `linear(to-r, ${getColors.black}, ${getColors.primary})`,
+                  bgGradient: `linear(to-r, ${getColors().black}, ${getColors().primary})`,
                 }}
                 onClick={onClose}
               >
