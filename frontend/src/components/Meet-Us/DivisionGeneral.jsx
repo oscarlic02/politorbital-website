@@ -8,6 +8,7 @@ import {
   IconButton,
   SlideFade,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { getColors } from "../../utils/utils";
@@ -57,15 +58,11 @@ const DivisionGeneral = () => {
     () => [
       {
         title: "WE ARE POLITORBITAL",
-        teams: ["BIOMEDICAL", "PROPULSION", "MANAGEMENT", "CAD"],
+        teams: ["BIOMEDICAL", "PROPULSION", "MARKETING", "CAD"],
       },
       {
         title: "WE ARE POLITORBITAL",
-        teams: ["AERODYNAMICS", "MATERIALS", "ELECTRONICS", "SOFTWARE"],
-      },
-      {
-        title: "WE ARE POLITORBITAL",
-        teams: ["MANAGEMENT", "MARKETING", "FINANCE", "OUTREACH"],
+        teams: ["MANAGEMENT", "MEDIA", "MISSION PROFILE", "ZEPHYR"],
       },
     ],
     []
@@ -91,7 +88,18 @@ const DivisionGeneral = () => {
           height="90%"
           width="100%"
         >
-          <Box w="90%" h="90%" bg="black" borderRadius="md" mt={4} />
+          <Box w="90%" h="90%" borderRadius="md" mt={4}>
+            <Image
+              src={`assets/MeetUs/${title.toLowerCase()}.jpeg`}
+              alt={`${title} Team`}
+              width="200px"
+              height="200px"
+              borderRadius="10px"
+              objectFit="cover"
+              margin={"0 auto"}
+              maxH={{ base: "300px", md: "500px", lg: "600px" }}
+            />
+          </Box>
           <Text
             color="white"
             fontSize={cardTextSize}

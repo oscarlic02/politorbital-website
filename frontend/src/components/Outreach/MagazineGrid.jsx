@@ -1,14 +1,96 @@
 import { useState } from "react";
-import { Box, Button, Grid, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Grid, Text, VStack, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 // Mock data for articles TODO replace with actual data
-const articlesData = Array.from({ length: 20 }, (_, i) => ({
+const articles = [
+  {
+    id: 1,
+    title: "Exploring the Final Frontier: The Future of Space Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/market.png",
+  },
+  {
+    id: 2,
+    title: "The Rise of Private Space Companies",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/medical.png",
+  },
+  {
+    id: 3,
+    title: "Mars Colonization: Challenges and Opportunities",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/propulsion.png",
+  },
+  {
+    id: 4,
+    title: "Satellite Technology and Its Impact on Global Communication",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/mission profile & concept.png",
+  },
+  {
+    id: 5,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/structures & materials.png",
+  },
+  {
+    id: 6,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/structures & materials.png",
+  },
+  {
+    id: 7,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/BOOTH.jpeg",
+  },
+  {
+    id: 8,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/gala.png",
+  },
+  {
+    id: 8,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/fotogruppo.png",
+  },
+  {
+    id: 8,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/GUYS IN MILAN .jpeg",
+  },
+  {
+    id: 8,
+    title: "Space Tourism: A New Era of Travel",
+    description:
+      "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
+    imageUrl: "assets/Articles/IPSESSION.jpeg",
+  },
+];
+
+let articlesData = Array.from({ length: 20 }, (_, i) => ({
   id: i,
   title: `Title ${i + 1}`,
   description:
     "Augue congue turpis ut purus ut nibh sit. Et consectetur et volutpat blandit sed facilisis.",
   imageUrl: "",
 }));
+
+articlesData = [...articles, ...articlesData];
 
 const PAGE_SIZE = 6;
 
@@ -54,7 +136,7 @@ const MagazineGrid = () => {
   
         {/* Article Grid */}
         <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6} w="full" maxW="1200px">
-          {articlesData.slice(0, visibleArticles).map(({ id, title, description }) => (
+          {articlesData.slice(0, visibleArticles).map(({ id, title, description, imageUrl }) => (
             <Box
               key={id}
               bg="rgba(255, 255, 255, 0.1)"
@@ -66,7 +148,7 @@ const MagazineGrid = () => {
               _hover={{ bg: "rgba(255, 255, 255, 0.2)" }}
               onClick={() => navigate(`/articles/${id}`)}
             >
-              <Box bg="gray.700" h="150px" borderRadius="md" mb={3} />
+              <Image src={imageUrl} width="100%" borderRadius="md" mb={3} />
               <Text fontSize="xl" fontWeight="bold">{title}</Text>
               <Text fontSize="sm" opacity={0.8} mt={2}>{description}</Text>
               <Button variant="link" color="yellow.400" mt={2}>

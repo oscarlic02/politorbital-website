@@ -13,6 +13,7 @@ import {
   useToast,
   FormControl,
   FormErrorMessage,
+  Image
 } from "@chakra-ui/react";
 import PropTypes from 'prop-types';
 import { useState } from "react";
@@ -81,6 +82,10 @@ export const SocialIcons = () => {
  * @returns {JSX.Element} A vertical stack containing a title and a grid of placeholder boxes.
  */
 export const AwardPlaceholders = () => {
+  const awardsList = [
+    { href: "#", icon: "assets/HomePage/award.png", alt: "Awards" },
+  ];
+  
   return (
     <VStack align="flex-start" width="100%" spacing="2vh">
       <Text
@@ -91,17 +96,22 @@ export const AwardPlaceholders = () => {
         Award recognition
       </Text>
       <Flex flexWrap="wrap" gap="10px" width="100%" justify="space-between">
-        {Array(8)
-          .fill(0)
-          .map((_, i) => (
-            <Box
-              key={i}
-              width={{ base: "calc(50% - 5px)", md: "8vw" }}
-              height={{ base: "70px", md: "10vh" }}
-              bg="#D9D9D9"
-              mb={{ base: "10px", md: 0 }}
+        {awardsList.map((award, i) => (
+          <Box
+            key={i}
+            width={{ base: "calc(50% - 5px)", md: "8vw" }}
+            height={{ base: "70px", md: "10vh" }}
+            mb={{ base: "10px", md: 0 }}
+          >
+            <Image
+              src={award.icon}
+              alt={award.alt}
+              width="100%"
+              height="100%"
+              objectFit="contain"
             />
-          ))}
+          </Box>
+        ))}
       </Flex>
     </VStack>
   );

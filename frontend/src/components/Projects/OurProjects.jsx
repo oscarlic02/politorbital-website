@@ -96,10 +96,15 @@ const OurProjects = () => {
     { id: 1, name: "SALTO" },
     { id: 2, name: "Elysium" },
     { id: 3, name: "Zephyr" },
+    { id: 4, name: "Antares" },
   ];
 
   const handleProjectClick = (projectName) => {
     setActiveProject(projectName);
+    const element = document.getElementById(`project-${projectName}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
