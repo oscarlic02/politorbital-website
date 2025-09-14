@@ -7,40 +7,71 @@ import {
   Heading,
   Flex,
   useBreakpointValue,
+  Image
 } from "@chakra-ui/react";
 import { getColors } from "../../utils/utils";
 
 // TEST DATA TODO replace with actual data
 const VALID_DIVISIONS = {
-  MANAGEMENT: {
+  STRUCTURES: {
     description:
-      "The Management Subdivision oversees project coordination, team organization, and resource allocation. We ensure smooth communication, track progress, and keep the team aligned with our goals to deliver successful outcomes.",
+      "We’re a team of 5 passionate students designing a spacecraft for tourism and research with sustainability at its core. Our mission? Build a safe, reusable, and eco-friendly capsule that withstands reentry, minimizes environmental impact, and pushes the boundaries of innovation. Here’s what we’re working on: ● Advanced materials to handle extreme temperatures. ● Cryogenic cooling systems for thermal stability. ● Recyclable components for a low-carbon footprint. ● Lightweight, aerodynamic design for maximum efficiency. With every detail, we’re proving that the future of space travel can be sustainable and groundbreaking. Meet the team: Sofia, Simone, Giuseppe, Dario, and Giovanni—bringing together expertise in aerospace and materials engineering to make this dream a reality.",
     members: [
-      "Alessandro Rossi",
-      "Giulia Bianchi",
-      "Matteo Ricci",
-      "Sofia Greco",
-      "Lorenzo Esposito",
-      "Martina Conti",
-      "Giovanni Romano",
-      "Chiara Gallo",
-      "Marco De Luca",
+      "First name Last name",
     ],
+    image: "/assets/MeetUs/cad.jpeg",
   },
-  OUTREACH: {
+  MARKETANALYSIS: {
     description:
-      "The Outreach Subdivision focuses on community engagement, public relations, and collaboration with external organizations. We promote our projects and build connections to expand our influence.",
+      "Our mission? Ensuring the Low Earth Orbit (LEO) vehicle is not only groundbreaking but also economically viable and aligned with the Student Aerospace Challenge requirements. With cross-team collaboration and a strategic approach, we’re shaping a vehicle that’s innovative, accessible, and sustainable. Key Focus Areas: ● Aerospace Market Analysis: Evaluating investments, costs, opportunities, and competitors. ● Risk Management: Applying Fault Tree Analysis (FTA) to identify and mitigate risks. ● Trends & Preferences: Understanding user needs for performance, cost, and accessibility. ● Sustainability: Exploring eco-friendly solutions while adhering to regulations.",
     members: [
-      "Elena Moretti",
-      "Riccardo Ferrari",
-      "Francesca Russo",
-      "Giovanni Bianchi",
-      "Marta Lombardi",
-      "Stefano Conti",
-      "Valeria Romano",
-      "Davide Greco",
-      "Claudia Esposito",
+      "Alessandro Santoro: Forecasting market growth trends and collaborating with the Medical Aspects team.",
+      "Maria Castagna: Analyzing key components of the aerospace market while supporting Structure & Materials",
+      "Cemre Samur: Conducting SWOT analysis and working with the Propulsion team.",
+      "Helia Shooshtari: Leading demand analysis, studying customer behavior, and coordinating with other sections.",
     ],
+    image: "/assets/MeetUs/marketing.jpeg",
+  },
+  MEDICALASPECTS: {
+    description:
+      "Our mission? Developing a cutting-edge device and web application to monitor passengers’ neurological and muscular health during spaceflights. Key Goals: ● EEG & EMG Monitoring: Designing a device to capture and analyze brain and muscle activity, tracking sleep quality and potential epilepsy episodes. ● User-Friendly Web App ● Data Access: Passengers can view EEG/EMG insights. ● Symptom Logging: Identify patterns and triggers by logging symptoms. ● Intuitive Interface: Accessible for all users, regardless of tech expertise.",
+    members: [
+      "Aarish Syed: Focused on electrode materials for comfort and precise data.",
+      "Delaram Dinian: Developing the web app and ensuring device integration.",
+      "Giulia Bandiera: Bridging biomedical needs with tech solutions.",
+      "Simone Orlandini: Supporting web app and device configuration.",
+      "Mohammadamin Nourì Uoshanloei: Innovating electrode materials for accuracy and user comfort."
+    ],
+    image: "/assets/MeetUs/biomedical.jpeg",
+  },
+  PROPULSION: {
+    description:
+      "Mission: Designing a cutting-edge propulsion system that’s sustainable, reusable, and high-performing! Highlights include: ● Retro-propulsion engines for maximum passenger comfort ● Redundant thrusters for full attitude control with minimal propellant usage ● Four main engines optimized for atmospheric re-entry and a vacuum-specific engine for space Innovative Systems: A turbopump-driven feed system with backup lines and battery-powered redundancy ensures reliability for all missions. Future steps include testing experimental propellants to further reduce space travel’s carbon footprint!",
+    members: [
+      "Irene Caracciolo: Working on retro-propulsion thrust for smoother landings.",
+      "Alberto Fanari: Focused on the design and dimensioning of the main engine.",
+      "Mnar Abdulaal: Designing reliable thrusters, engines, and feed systems.",
+      "Lorenzo: Specializing in secondary thrusters and attitude control systems.",
+      "Panagiotis Argyris: Gaining hands-on propulsion design experience while collaborating on system integration."
+    ],
+    image: "/assets/MeetUs/propulsion.jpeg",
+  },
+  MISSIONPROFILE: {
+    description:
+      "Our mission? Developing a spacecraft designed for tourism and commercial applications, balancing operational needs with thermal efficiency for optimal performance and passenger comfort. Key Areas of Focus: ● Mission Profile: Analyzing critical flight phases to optimize efficiency, safety, and performance. ● Requirements Definition: Establishing clear objectives to guide the spacecraft’s design. ● Design Development: Crafting the geometry and thermal systems to meet performance and comfort goals.",
+    members: [
+      "Alberto, Federico, Asia: Working on preliminary spacecraft sizing, including mass breakdown and dimensions.",
+      "Andrea, Giovanna: Calculating impulse requirements for a smooth reentry and safe gliding landing.",
+    ],
+    image: "/assets/MeetUs/mission profile.jpeg",
+  },
+  ZEPHYR: {
+    description:
+      "Aerothermodynamics Section: Shaping Zephyr for success! The team is optimizing the spacecraft’s aerodynamic design to fit Ariane Next’s payload fairing. Through advanced CFD simulations, they’re testing airfoils and wing shapes for different re-entry conditions. The section is also designing and testing a Thermal Protection System to ensure safe atmospheric re-entry. Next steps? Full CFD analysis of the Zephyr model and Wind Gallery tests on a 3D-printed prototype! CAD & 3D Printing Section: Crafting Zephyr in detail! Using SolidWorks, the team is refining the spacecraft’s fuselage, wings, nose, engine, and interior to balance aerodynamics and passenger comfort. The design is scaled for a 1:10 3D print, featuring intricate internal details and optimized for testing.",
+    members: [
+      "first name last name",
+    ],
+    image: "/assets/MeetUs/zephyr.jpeg",
   },
 };
 
@@ -85,7 +116,7 @@ const DivisionDetail = () => {
   if (!VALID_DIVISIONS[upperCaseDivision]) {
     return <Navigate to="/not-found" replace />;
   }
-  const { description, members } = VALID_DIVISIONS[upperCaseDivision];
+  const { description, members, image } = VALID_DIVISIONS[upperCaseDivision];
   return (
     <Box
       position="relative"
@@ -120,9 +151,13 @@ const DivisionDetail = () => {
           alignItems="center"
           overflow="hidden"
         >
-          <Text fontSize="5xl" fontWeight="bold">
-            PHOTO
-          </Text>
+          <Image
+            src={image}
+            alt={`${upperCaseDivision} Team`}
+            objectFit="cover"
+            width="100%"
+            height="100%"
+          />
         </Box>
 
         <Box

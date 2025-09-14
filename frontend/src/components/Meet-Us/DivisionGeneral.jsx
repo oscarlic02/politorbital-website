@@ -58,19 +58,51 @@ const DivisionGeneral = () => {
     () => [
       {
         title: "WE ARE POLITORBITAL",
-        teams: ["BIOMEDICAL", "PROPULSION", "MARKETING", "CAD"],
+        teams: [
+          {
+            title: "Structures & Materials",
+            url: "structures",
+            image: "assets/MeetUs/cad.jpeg",
+          },
+          {
+            title: "Market analysis",
+            url: "marketanalysis",
+            image: "assets/MeetUs/marketing.jpeg",
+          },
+          {
+            title: "Medical Aspects",
+            url: "medicalaspects",
+            image: "assets/MeetUs/biomedical.jpeg",
+          },
+          {
+            title: "Propulsion",
+            url: "propulsion",
+            image: "assets/MeetUs/propulsion.jpeg",
+          },
+        ],
       },
       {
         title: "WE ARE POLITORBITAL",
-        teams: ["MANAGEMENT", "MEDIA", "MISSION PROFILE", "ZEPHYR"],
+        teams: [
+          {
+            title: "Mission Profile & Concept",
+            url: "missionprofile",
+            image: "assets/MeetUs/mission profile.jpeg",
+          },
+          {
+            title: "Zephyr Division",
+            url: "zephyr",
+            image: "assets/MeetUs/zephyr.jpeg",
+          },
+        ],
       },
     ],
     []
   );
 
   const createTeamCard = useCallback(
-    (title, highlighted = false) => (
-      <Link to={`/meet-us/${title.toLowerCase()}`}>
+    (division, highlighted = false) => (
+      <Link to={`/meet-us/${division.url}`}>
         <Flex
           as="a"
           direction="column"
@@ -90,8 +122,8 @@ const DivisionGeneral = () => {
         >
           <Box w="90%" h="90%" borderRadius="md" mt={4}>
             <Image
-              src={`assets/MeetUs/${title.toLowerCase()}.jpeg`}
-              alt={`${title} Team`}
+              src={division.image}
+              alt={`${division.title} Team`}
               width="200px"
               height="200px"
               borderRadius="10px"
@@ -112,7 +144,7 @@ const DivisionGeneral = () => {
             textAlign="center"
             px={2}
           >
-            {title}
+            {division.title}
           </Text>
         </Flex>
       </Link>

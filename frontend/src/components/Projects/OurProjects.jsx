@@ -93,9 +93,9 @@ const OurProjects = () => {
   const subheadingColor = useColorModeValue("gray.300", "gray.300");
 
   const projects = [
-    { id: 1, name: "SALTO" },
-    { id: 2, name: "Elysium" },
     { id: 3, name: "Zephyr" },
+    { id: 1, name: "Salto" },
+    { id: 2, name: "Elysium" },
     { id: 4, name: "Antares" },
   ];
 

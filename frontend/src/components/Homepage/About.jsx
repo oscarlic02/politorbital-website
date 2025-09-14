@@ -240,7 +240,11 @@ const About = () => {
               OUR MISSION
             </Text>
             <Text fontSize={{ base: "16px", md: "18px" }} color="#FFFFFF">
-              The mission of the team is about
+              Our mission is to design and develop innovative aerospace
+              technologies that challenge conventional limits, empowering students to create
+              groundbreaking solutions in space exploration and tourism. Through collaboration, research,
+              and experimentation, we aim to contribute to the future of space travel while fostering a
+              passion for aerospace engineering.
             </Text>
           </Box>
 
@@ -254,7 +258,9 @@ const About = () => {
               OUR VISION
             </Text>
             <Text fontSize={{ base: "16px", md: "18px" }} color="#FFFFFF">
-              The vision of the team is about
+              PoliTOrbital is driven to innovate and push aerospace boundaries, from
+              suborbital to orbital flight. We aim to inspire future pioneers and make space accessible for
+              all.
             </Text>
           </Box>
         </Flex>

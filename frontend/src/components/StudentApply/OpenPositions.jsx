@@ -214,53 +214,7 @@ const OpenPositions = () => {
   const colors = getColors();
 
   // TODO - Replace with actual data
-  const positions = [
-    {
-      role: "Sponsor Manager",
-      subteam: "Name of the subteam",
-      division: "Name of the division",
-      description:
-        "The Sponsor Manager plays a vital role in securing and managing relationships with sponsors to ensure the necessary resource support for the team's projects. This involves identifying potential sponsors, organizing presentation meetings, negotiating sponsorship and partnership agreements, and fostering long-term partnerships. The Sponsor Manager also ensures that the team fulfills its obligations to sponsors, maintaining strong and mutually beneficial relationships.",
-      requiredSkills: [
-        "Effective communication",
-        "Negotiation",
-        "Attention to details",
-      ],
-      desiderableSkills: [
-        "Effective communication",
-        "Negotiation",
-        "Attention to details",
-      ],
-      showDisclaimer: true,
-    },
-    {
-      role: "Name of the role",
-      subteam: "Name of the subteam",
-      division: "Name of the division",
-      description: "Job description goes here...",
-      requiredSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      desiderableSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      showDisclaimer: false,
-    },
-    {
-      role: "Name of the role",
-      subteam: "Name of the subteam",
-      division: "Name of the division",
-      description: "Job description goes here...",
-      requiredSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      desiderableSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      showDisclaimer: false,
-    },
-    {
-      role: "Name of the role",
-      subteam: "Name of the subteam",
-      division: "Name of the division",
-      description: "Job description goes here...",
-      requiredSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      desiderableSkills: ["Skill 1", "Skill 2", "Skill 3"],
-      showDisclaimer: false,
-    },
-  ];
+  const positions = [];
 
   return (
     <Box

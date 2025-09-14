@@ -1,46 +1,36 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Box, Button, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Text, VStack, Image } from "@chakra-ui/react";
 
-const articlesData = [
-    {
-      id: 0,
-      title: "Exploring the Future of Space Tourism",
-      subtitle: "A deep dive into the next frontier",
-      content: `
-        Space tourism is no longer a dream; it's becoming a reality. With private companies like SpaceX, Blue Origin, and Virgin Galactic leading the way, the industry is evolving rapidly. 
-        Politorbital team, a research group from Politecnico di Torino, has been developing cutting-edge suborbital spacecraft designs to make space travel more accessible. 
-        
-        In this article, we explore the engineering behind these spacecraft, the challenges of space travel, and the potential for commercial space tourism in the coming decade.
-        
-        ## The Rise of Space Tourism
-        The concept of space tourism dates back to the early days of space exploration. However, recent advancements in reusable rocket technology have made it more viable. 
-        Companies are now offering suborbital and orbital experiences to private citizens, creating a new era of space travel.
-        
-        ## Challenges & Innovations
-        Some of the major challenges of space tourism include:
-        
-        - **Cost Efficiency**: Making space travel affordable for more people.
-        - **Safety Measures**: Ensuring safe launches, landings, and in-flight experiences.
-        - **Sustainable Space Travel**: Reducing environmental impact through innovative fuel sources.
-        
-        ## What’s Next?
-        Experts predict that within the next 10-20 years, we could see orbital hotels, lunar tourism, and even deep-space missions open to civilians.
-        
-        Join us as we continue to push the boundaries of what's possible in space travel!
-      `,
-      imageUrl: "https://via.placeholder.com/600x300", // Example image placeholder
-    },
-    ...Array.from({ length: 19 }, (_, i) => ({
-      id: i + 1,
-      title: `Title ${i + 1}`,
-      subtitle: "Subtitle",
-      content:
-        "Politorbital team is a university team from Politecnico di Torino born in 2020 for designing suborbital spacecrafts for space tourism. ".repeat(
-          10
-        ),
-      imageUrl: "https://via.placeholder.com/600x300", // Placeholder image
-    })),
-  ];
+let articlesData = [
+  {
+    id: 8,
+    title: "PoliTOrbital Debuts Zephyr at IAC 2024 in Milan: A New Era of Student-Led Space Innovation",
+    content:
+      "At the prestigious International Astronautical Congress (IAC) 2024 in Milan, a student team from Politecnico di Torino made an impressive mark on the global stage. PoliTOrbital, a student initiative rooted in academic excellence and aerospace ambition, presented its first orbital spacecraft—Zephyr—in an Interactive Presentation (IP) session. Representing the team were Antonio Policaro, Martina Chiachiaro, Federico Lacedonio and Ilaria Zade, who carried both the weight of their technical work and the honor of their institution into one of the most important space conferences in the world.",
+    imageUrl: "/assets/Articles/GUYS IN MILAN .jpeg",
+  },
+  {
+    id: 7,
+    title: "A Milestone Moment",
+    content:
+      "Presenting at IAC is a career milestone for many in the aerospace field; for PoliTOrbital, it marked the culmination of months of hard work and a bold step into the spotlight of international aerospace research. The presentation of Zephyr, the team’s first fully orbital spacecraft, was a proud moment—described by the team as “a pleasure and an honour. ” Developed for the Student Aerospace Challenge 2024, Zephyr is more than a student project. It is the foundation of a long-term mission to push the boundaries of accessibility in space travel.",
+    imageUrl: "/assets/Articles/BOOTH.jpeg",
+  },
+  {
+    id: 9,
+    title: "Zephyr: Redefining Student Spacecraft Design",
+    content:
+      "Zephyr is designed to reach orbital altitudes of up to 1000 km, accommodating up to seven non-professional passengers. This capability positions it as a pioneering concept in the field of student-developed human-rated spacecraft. The project was so impactful during the Challenge that PoliTOrbital’s Medical Division received a prize, validating not only the technical robustness of the spacecraft, but also the team's attention to human-centered design. Following the Challenge, the team announced the formation of a dedicated Zephyr Division in 2024 to continue refining and developing the spacecraft for future applications. Unlike previous models, Zephyr will be physically prototyped in a larger size, revealing its complete internal structure—a leap forward from traditional exterior-only mock-ups. The approach emphasizes full-system integration and realism in both form and function.",
+    imageUrl: "/assets/Articles/IPSESSION.jpeg",
+  },
+  {
+    id: 1,
+    title: "STUDENT AEROSPACE CHALLENGE 2025 (NEW)",
+    content:
+      "PoliTOrbital’s ANTARES Wins Communication Prize for Medical Innovation at Student Aerospace Challenge 2025 In June 2025, PoliTOrbital, a student team from Politecnico di Torino, achieved a remarkable success at the Student Aerospace Challenge in Paris by winning the Communication Prize for the Medical Aspects section of their project ANTARES. This award recognizes the team’s innovative integration of advanced medical systems for human spaceflight within their orbital vehicle design. ANTARES: A Reusable Orbital Vehicle with Human-Centered Design ANTARES is PoliTOrbital’s conceptual reusable orbital spacecraft designed for safe, sustainable human transportation to low Earth orbit. The project emphasizes environmental responsibility, passenger safety, and comfort—critical factors as the commercial spaceflight industry evolves. A standout feature of ANTARES is the incorporation of the STaR-ADEM medical system, developed by the team’s medical section to monitor and safeguard astronaut health during orbital missions. STaR-ADEM: Advanced Sleep Monitoring for Orbit Sleep quality is vital for astronauts, particularly in orbit where microgravity, radiation, and confined habitats can disrupt normal sleep cycles and impact performance. PoliTOrbital developed STaR-ADEM (Sleep Tracking and Assessment Device for Extended Missions), a compact EEG-based system that monitors sleep stages with only 8 to 16 strategically placed dry electrodes. The electrodes are made from cutting-edge MXene–PEDOT:PSS composites, materials offering excellent electrical conductivity, flexibility, and biocompatibility. This allows STaR-ADEM to be gel-free, comfortable, lightweight, and reusable, ideal for the extended durations typical of orbital missions. STaR-ADEM transmits data using Visible Light Communication (VLC) instead of traditional radio frequencies. This eliminates electromagnetic interference with other sensitive onboard systems, ensuring reliable, safe data transmission in the spacecraft’s electronics-rich environment. Holistic Medical and Human Factors Approach Beyond sleep monitoring, ANTARES includes ergonomic cabin design and telemedicine capabilities for real-time health assessment and remote medical support, key to ensuring crew safety and comfort during orbital flights. This comprehensive approach addresses both physical and psychological needs, anticipating challenges of commercial space travel. Future Directions Building on STaR-ADEM’s success, PoliTOrbital plans to advance medical systems for orbital missions, exploring improved radiation protection, psychological health support, and AI-driven health diagnostics. Partnerships with aerospace and medical industries are planned to develop prototypes and validate performance in microgravity environments. PoliTOrbital’s ANTARES and its innovative STaR-ADEM system illustrate how student-led projects are at the forefront of merging aerospace and medical engineering. Their success at the Student Aerospace Challenge 2025 highlights the growing importance of human-centered design in orbital spaceflight, paving the way for safer, more comfortable space exploration and tourism.",
+    imageUrl: "/assets/Articles/propulsion.png",
+  },
+];
 
 /**
  * Article component that displays the details of a specific article.
@@ -58,9 +48,9 @@ const articlesData = [
  * @returns {JSX.Element} The rendered Article component.
  */
 const Article = () => {
-  const { id } = useParams();
+  const { articleId } = useParams();
   const navigate = useNavigate();
-  const article = articlesData[0]; // Fetch article data based on ID
+  let article = articlesData.find((art) => art.id === parseInt(articleId));
 
 
   return (
@@ -74,7 +64,12 @@ const Article = () => {
       </Text>
 
       {/* Image Placeholder */}
-      <Box w="80%" h="300px" bg="gray.700" borderRadius="lg" mt={4}></Box>
+      <Image
+        src={article.imageUrl}
+        alt={article.title}
+        width="80%"
+        borderRadius="md"
+      />
 
       {/* Article Content */}
       <Box w="80%" textAlign="left">
