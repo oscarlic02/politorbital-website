@@ -40,8 +40,6 @@ const Header = () => {
     { name: "Meet us", href: "/meet-us" },
     { name: "Projects", href: "/projects" },
     { name: "Outreach", href: "/outreach" },
-    { name: "Apply", href: "/apply" },
-    { name: "Work with us", href: "/work-with-us" },
   ];
 
   // yellow color on active tab

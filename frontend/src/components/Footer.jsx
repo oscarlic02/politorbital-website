@@ -77,13 +77,11 @@ const Footer = () => {
           p={{ base: "20px", md: "40px" }}
           gap={{ base: "30px", md: "40px" }}
         >
-          <Box width={{ base: "100%", md: "45%" }}>
+          <Box width={{ base: "100%", md: "80%" }}>
             <ContactForm />
           </Box>
           
-          <Box width={{ base: "100%", md: "45%" }}>
-            <AwardPlaceholders />
-          </Box>
+        
         </Flex>
         
         <Box

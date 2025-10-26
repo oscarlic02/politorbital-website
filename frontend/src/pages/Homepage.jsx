@@ -10,7 +10,7 @@ const HomePage = () => {
     <Box>
       <Header />
       <DiscoverIdeas />
-      <FlashNews />
+      {/* <FlashNews /> */}
       <Timeline />
       <About />
       <Footer />

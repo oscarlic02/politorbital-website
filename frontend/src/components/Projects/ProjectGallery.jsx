@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { Box, Flex, Button, Heading, useDisclosure } from '@chakra-ui/react';
 import { ViewIcon, InfoIcon } from '@chakra-ui/icons';
@@ -145,7 +146,7 @@ const spacecraftDataArray = [
         description: "Aerodynamic profile designed for atmospheric re-entry and optimal heat dissipation during high-velocity descent."
       }
     ],
-    overview: "The SALTO (Strategic Atmospheric Lightweight Transport Orbiter) represents the next generation in versatile spacecraft design. Combining the capabilities of an orbital vehicle with atmospheric flight characteristics, SALTO enables seamless transitions between space operations and controlled atmospheric re-entry.",
+  overview: "SALTO is the first sub-orbital vehicle to be built cohesively throughout all PoliTOrbital sections, despite the team's initial attempts to build distinct concepts for each section during the 2020–21 project. The CAD displayed is SALTO 2.0, our team's first aerospace student challenge win.",
     stats: [
       {
         label: "Mass",
@@ -161,28 +162,6 @@ const spacecraftDataArray = [
         label: "Payload",
         value: "1,200 kg",
         helpText: "Max capacity"
-      }
-    ],
-    technologies: [
-      {
-        title: "Materials",
-        color: "blue.300",
-        description: "Carbon-ceramic composite hull with ablative heat shielding capable of withstanding temperatures up to 1,800°C during atmospheric re-entry."
-      },
-      {
-        title: "Propulsion System",
-        color: "teal.300",
-        description: "Hybrid propulsion combining high-efficiency ion thrusters for space maneuvers with chemical rockets for rapid acceleration when needed."
-      },
-      {
-        title: "Navigation",
-        color: "purple.300",
-        description: "Multi-modal guidance system using quantum-assisted stellar positioning in space and advanced GPS/terrain recognition during atmospheric flight."
-      },
-      {
-        title: "Power Generation",
-        color: "orange.300",
-        description: "Triple-junction solar arrays with 34% efficiency, coupled with next-gen lithium-polymer battery storage for eclipse operations."
       }
     ],
     specifications: {
@@ -243,7 +222,7 @@ const spacecraftDataArray = [
         description: "Aerodynamic profile designed for atmospheric re-entry and optimal heat dissipation during high-velocity descent."
       },
     ],
-    overview: "The SALTO (Strategic Atmospheric Lightweight Transport Orbiter) represents the next generation in versatile spacecraft design. Combining the capabilities of an orbital vehicle with atmospheric flight characteristics, SALTO enables seamless transitions between space operations and controlled atmospheric re-entry.",
+  overview: "PoliTOrbital's first wing-body sub-orbital spacecraft, ELYSIUM, won multiple honors in the Student Aerospace Challenge 2023. With a crew of seven, the vehicle can go up to 100 kilometers using two air-breathing engines and a rocket engine. It’s our most experimental vehicle.",
     stats: [
       {
         label: "Mass",
@@ -259,28 +238,6 @@ const spacecraftDataArray = [
         label: "Payload",
         value: "1,200 kg",
         helpText: "Max capacity"
-      }
-    ],
-    technologies: [
-      {
-        title: "Materials",
-        color: "blue.300",
-        description: "Carbon-ceramic composite hull with ablative heat shielding capable of withstanding temperatures up to 1,800°C during atmospheric re-entry."
-      },
-      {
-        title: "Propulsion System",
-        color: "teal.300",
-        description: "Hybrid propulsion combining high-efficiency ion thrusters for space maneuvers with chemical rockets for rapid acceleration when needed."
-      },
-      {
-        title: "Navigation",
-        color: "purple.300",
-        description: "Multi-modal guidance system using quantum-assisted stellar positioning in space and advanced GPS/terrain recognition during atmospheric flight."
-      },
-      {
-        title: "Power Generation",
-        color: "orange.300",
-        description: "Triple-junction solar arrays with 34% efficiency, coupled with next-gen lithium-polymer battery storage for eclipse operations."
       }
     ],
     specifications: {
@@ -316,7 +273,7 @@ const spacecraftDataArray = [
         description: "Aerodynamic profile designed for atmospheric re-entry and optimal heat dissipation during high-velocity descent."
       }
     ],
-    overview: "The SALTO (Strategic Atmospheric Lightweight Transport Orbiter) represents the next generation in versatile spacecraft design. Combining the capabilities of an orbital vehicle with atmospheric flight characteristics, SALTO enables seamless transitions between space operations and controlled atmospheric re-entry.",
+  overview: "With a capsule-like body and retro-propelled propulsion, ANTARES is the newest vehicle in Politorbital's fleet. It can carry up to seven non-professional passengers on journeys lasting up to six months. STAr-ADEM, a fantastic device for passenger health monitoring, was presented by the medical aspect division, which won the communication prize at the aerospace student competition.",
     stats: [
       {
         label: "Mass",
@@ -399,7 +356,8 @@ const ProjectGallery = () => {
       position="relative"
       bg="transparent"
     >
-      {spacecraftDataArray.map((spacecraftData, index) => (<>
+      {spacecraftDataArray.map((spacecraftData, index) => (
+          <React.Fragment key={spacecraftData.title || index}>
         {/* Gradient Background */}
         <Box
           position="absolute"
@@ -463,7 +421,6 @@ const ProjectGallery = () => {
           <Box px={6} pb={6}>
             <InfoTabs 
               overview={spacecraftData.overview} 
-              stats={spacecraftData.stats} 
               technologies={spacecraftData.technologies} 
             />
           </Box>
@@ -475,8 +432,8 @@ const ProjectGallery = () => {
           onClose={onClose} 
           specifications={spacecraftData.specifications} 
         />
-        </>
-      ))}
+      </React.Fragment>
+    ))}
     </Box>
   );
 };

@@ -23,44 +23,60 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element} The rendered InfoTabs component.
  */
 const InfoTabs = ({ overview, stats, technologies }) => {
+  // Only show tabs if at least one section is defined
+  const hasOverview = typeof overview === 'string' && overview.trim() !== '';
+  const hasStats = Array.isArray(stats) && stats.length > 0;
+  const hasTechnologies = Array.isArray(technologies) && technologies.length > 0;
+
+  if (!hasOverview && !hasStats && !hasTechnologies) return null;
+
   return (
     <Tabs variant="enclosed" colorScheme="blue" size="sm">
       <TabList borderBottomColor="gray.700">
-        <Tab color="gray.300" _selected={{ color: "white", bg: "gray.700" }}>Overview</Tab>
-        <Tab color="gray.300" _selected={{ color: "white", bg: "gray.700" }}>Technology</Tab>
+        {hasOverview || hasStats ? (
+          <Tab color="gray.300" _selected={{ color: "white", bg: "gray.700" }}>Overview</Tab>
+        ) : null}
+        {hasTechnologies ? (
+          <Tab color="gray.300" _selected={{ color: "white", bg: "gray.700" }}>Technology</Tab>
+        ) : null}
       </TabList>
-      
       <TabPanels>
         {/* Overview Tab */}
-        <TabPanel>
-          <Text color="gray.300" fontSize="sm">
-            {overview}
-          </Text>
-          
-          <Grid templateColumns="repeat(3, 1fr)" gap={4} mt={4}>
-            {stats.map((stat, index) => (
-              <Stat key={index}>
-                <StatLabel color="gray.400">{stat.label}</StatLabel>
-                <StatNumber color="white" fontSize="md">{stat.value}</StatNumber>
-                <StatHelpText color="gray.400">{stat.helpText}</StatHelpText>
-              </Stat>
-            ))}
-          </Grid>
-        </TabPanel>
-        
+        {hasOverview || hasStats ? (
+          <TabPanel>
+            {hasOverview && (
+              <Text color="gray.300" fontSize="sm" mb={hasStats ? 4 : 0}>
+                {overview}
+              </Text>
+            )}
+            {hasStats && (
+              <Grid templateColumns="repeat(3, 1fr)" gap={4} mt={hasOverview ? 4 : 0}>
+                {stats.map((stat, index) => (
+                  <Stat key={index}>
+                    <StatLabel color="gray.400">{stat.label}</StatLabel>
+                    <StatNumber color="white" fontSize="md">{stat.value}</StatNumber>
+                    <StatHelpText color="gray.400">{stat.helpText}</StatHelpText>
+                  </Stat>
+                ))}
+              </Grid>
+            )}
+          </TabPanel>
+        ) : null}
         {/* Technology Tab */}
-        <TabPanel>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-            {technologies.map((tech, index) => (
-              <Box key={index} p={3} bg="gray.800" borderRadius="md">
-                <Text color={tech.color} fontSize="sm" fontWeight="medium" mb={1}>{tech.title}</Text>
-                <Text color="gray.300" fontSize="xs">
-                  {tech.description}
-                </Text>
-              </Box>
-            ))}
-          </Grid>
-        </TabPanel>
+        {hasTechnologies ? (
+          <TabPanel>
+            <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+              {technologies.map((tech, index) => (
+                <Box key={index} p={3} bg="gray.800" borderRadius="md">
+                  <Text color={tech.color} fontSize="sm" fontWeight="medium" mb={1}>{tech.title}</Text>
+                  <Text color="gray.300" fontSize="xs">
+                    {tech.description}
+                  </Text>
+                </Box>
+              ))}
+            </Grid>
+          </TabPanel>
+        ) : null}
       </TabPanels>
     </Tabs>
   );
